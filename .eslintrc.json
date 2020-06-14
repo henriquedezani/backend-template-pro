@@ -15,6 +15,16 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "no-underscore-dangle": "off",
+    "class-methods-use-this": "off",
+    "@typescript-eslint/camelcase": "off",
+    "no-useless-constructor": "off",
+    "no-empty-function": "off",
+    "@typescript-eslint/no-unused-vars": [ "error", {
+      "argIgnorePattern": "_"
+    }],
+    "semi": "off",
+    // "no-unused-vars": "off",
     "import/extensions" : [
       "error",
       "ignorePackages",

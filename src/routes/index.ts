@@ -1,7 +1,11 @@
 import Router from 'express';
+import VideoController from '../controllers/VideoController';
 
 const routes = Router();
 
-routes.get('/', (request, response) => response.json({ message: 'Hello, World.' }));
+const videoController = new VideoController();
+
+routes.get('/', videoController.read);
+routes.get('/create', videoController.create);
 
 export default routes;

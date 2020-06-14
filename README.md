@@ -2,6 +2,10 @@
 
 Após criar um repositório a partir deste template, execute o comando `yarn`.
 
+## Execução do projeto:
+
+`yarn dev:server`
+
 ## Estrutura do projeto:
 
 Pasta `src` contém os códigos-fonte:
