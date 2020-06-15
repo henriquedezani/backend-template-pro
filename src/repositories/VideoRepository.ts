@@ -19,21 +19,3 @@ class VideoRepository implements IVideoRepository {
 }
 
 export default VideoRepository;
-
-// import { EntityRepository, Repository } from 'typeorm';
-// import IVideoRepository from './IVideoRepository';
-// import Video from '../models/Video';
-
-// @EntityRepository(Video)
-// class VideoRepository extends Repository<Video> implements IVideoRepository {
-//   public async read(): Promise<Video[] | undefined> {
-//     const videos = this.find();
-//     return videos;
-//   }
-
-//   // public async create(video: Video): Promise<void> {
-//   //   this.create(video);
-//   // }
-// }
-
-// export default VideoRepository;
