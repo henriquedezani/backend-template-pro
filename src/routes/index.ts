@@ -5,7 +5,7 @@ const routes = Router();
 
 const videoController = new VideoController();
 
-routes.get('/', videoController.read);
-routes.get('/create', videoController.create);
+routes.get('/video', videoController.read);
+routes.post('/video', videoController.create);
 
 export default routes;

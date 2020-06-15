@@ -5,14 +5,13 @@ import ListVideoService from '../services/ListVideoService';
 
 export default class VideoController {
   public async read(request: Request, response: Response): Promise<Response> {
-    const service = container.resolve(ListVideoService);
-    const videos = await service.execute();
+    const videos = await container.resolve(ListVideoService).execute();
     return response.json(videos);
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
-    const service = container.resolve(CreateVideoService);
-    const video = await service.execute({ title: 'title 1' });
+    const { title } = request.body;
+    const video = await container.resolve(CreateVideoService).execute({ title });
     return response.json(video);
   }
 }

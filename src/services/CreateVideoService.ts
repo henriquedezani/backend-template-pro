@@ -1,5 +1,5 @@
 import { injectable, inject } from 'tsyringe';
-import Video from '../models/video';
+import Video from '../models/Video';
 import IVideoRepository from '../repositories/IVideoRepository';
 
 interface IRequest {
