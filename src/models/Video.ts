@@ -9,6 +9,9 @@ class Video {
   @Column()
   public title: string;
 
+  @Column()
+  public userId: string;
+
   @Column('timestamp with time zone')
   public date: Date;
 

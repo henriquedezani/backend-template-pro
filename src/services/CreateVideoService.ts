@@ -1,4 +1,5 @@
 import { injectable, inject } from 'tsyringe';
+// import { getCustomRepository } from 'typeorm';
 import Video from '../models/Video';
 import IVideoRepository from '../repositories/IVideoRepository';
 
@@ -13,12 +14,24 @@ export default class CreateVideoService {
   ) { }
 
   public async execute({ title }: IRequest): Promise<Video> {
-    const video = new Video(title);
-    video.date = new Date(Date.now());
-    video.code = '123';
+    try {
+      // const _repository = getCustomRepository<VideoRepository>(this.repository);
 
-    await this.repository.create(video);
+      // const video = this.repository.create({
+      //   title,
+      //   userId: '123',
+      //   date: new Date(Date.now()),
+      //   code: '321',
+      // });
 
-    return video;
+      return await this.repository.create({
+        title,
+        userId: '123',
+        date: new Date(Date.now()),
+        code: '321ds',
+      });
+    } catch (error) {
+      throw Error(error);
+    }
   }
 }

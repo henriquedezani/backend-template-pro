@@ -8,8 +8,12 @@ export default class ListVideoService {
     @inject('VideoRepository') private repository: IVideoRepository,
   ) { }
 
-  public async execute(): Promise<Video[]> {
-    const videos = this.repository.read();
-    return videos;
+  public async execute(): Promise<Video[] | undefined> {
+    try {
+      const videos = this.repository.read();
+      return videos;
+    } catch (error) {
+      throw Error(error);
+    }
   }
 }

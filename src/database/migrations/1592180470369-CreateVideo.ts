@@ -11,9 +11,15 @@ export default class CreateVideo1592180470369 implements MigrationInterface {
             type: 'varchar',
             isPrimary: true,
             generationStrategy: 'uuid',
+            default: 'uuid_generate_v4()',
           },
           {
-            name: 'user_id',
+            name: 'userId',
+            type: 'varchar',
+            isNullable: false,
+          },
+          {
+            name: 'title',
             type: 'varchar',
             isNullable: false,
           },
